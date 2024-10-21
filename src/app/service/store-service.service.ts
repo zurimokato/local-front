@@ -8,7 +8,7 @@ import { BaseResponse } from '../dto/base-response.dto';
 @Injectable({
   providedIn: 'root'
 })
-export class StoreServiceService {
+export class StoreService {
 
   apiEndpoint:string='stores';
   
@@ -16,6 +16,9 @@ export class StoreServiceService {
 
   getStores(): Observable<BaseResponse<Store[]>> {
     return this.http.get<BaseResponse<Store[]>>(`${api.baseUrl+this.apiEndpoint}`);
+  }
+  createStore(store:Store):Observable<BaseResponse<Store>>{
+    return this.http.post<BaseResponse<Store>>(`${api.baseUrl+this.apiEndpoint}`,store);
   }
 
 

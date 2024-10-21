@@ -1,1 +1,21 @@
-<p>store works!</p>
+<form [formGroup]="storeFormGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="address">
+    </mat-form-field> 
+    <mat-form-field appearance="outline">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="phone">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="status">
+            <mat-option *ngFor="let stat of status" [value]="stat">{{ stat }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button type="submit" [disabled]="!storeFormGroup.valid">Submit</button>
+</form>
