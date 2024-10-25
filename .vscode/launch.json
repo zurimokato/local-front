@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "chrome-debug",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200/",

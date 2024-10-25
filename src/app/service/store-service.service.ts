@@ -12,7 +12,7 @@ export class StoreService {
 
   apiEndpoint:string='stores';
   
-  constructor(private http:HttpClient) { }
+  constructor(private readonly  http:HttpClient) { }
 
   getStores(): Observable<BaseResponse<Store[]>> {
     return this.http.get<BaseResponse<Store[]>>(`${api.baseUrl+this.apiEndpoint}`);
