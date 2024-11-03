@@ -1,0 +1,16 @@
+.menu-item {
+    display: flex;
+    align-items: center; /* Alineación vertical centrada */
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-item mat-icon {
+    margin-right: 8px;
+    font-size: 24px; /* Asegúrate de que el icono tenga un tamaño adecuado */
+    vertical-align: middle; /* Alineación vertical */
+  }
+  
+  .menu-item span {
+    font-size: 16px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  }

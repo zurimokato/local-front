@@ -8,11 +8,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Menu } from '../../dto/menu.dto';
 import { MenuService } from '../../service/menu.service';
 import { BaseResponse } from '../../dto/base-response.dto';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { Status } from '../../dto/enum/status.enum';
 
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MenuItemComponent],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css'
 })
@@ -20,7 +22,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   mobileQuery: MediaQueryList;
   menus:Menu[]=[];
-
+  menuhome:Menu;
   fillerNav = [];
   private readonly _mobileQueryListener: () => void;
 
@@ -30,7 +32,8 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addEventListener("change",()=>{
       this._mobileQueryListener();
-    })
+    });
+    this.menuhome={id:0,name:"Home", icon:"dashboard",url:"/home",status:Status.ACTIVE,parent:null,children:null};
   }
   ngOnInit(): void {
     this.getMenu();

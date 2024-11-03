@@ -6,6 +6,6 @@ export interface Menu{
     url:string;
     status:Status;
     icon:string,
-    parent:Menu;
-    children:Menu[];
+    parent:Menu |null;
+    children:Menu[]|null;
 }
