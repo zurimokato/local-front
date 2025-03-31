@@ -10,11 +10,12 @@ import { MenuService } from '../../service/menu.service';
 import { BaseResponse } from '../../dto/base-response.dto';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { Status } from '../../dto/enum/status.enum';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MenuItemComponent],
+  imports: [RouterOutlet,MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule, MenuItemComponent],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css'
 })
